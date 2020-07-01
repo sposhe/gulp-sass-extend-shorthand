@@ -23,7 +23,7 @@ figure {                               // figure {
 dl {                                   // dl {                         
   .mixinA,                             //   @extend .mixinA !optional;
   .mixinC !optional;                   //   @extend .mixinB !optional;
-  dt {                                 //   dd {                        
+  dt {                                 //   dt {                        
     %placeholderMixin;                 //     @extend %placeholderMixin;        
   }                                    //   }                            
 }                                      // }                              
