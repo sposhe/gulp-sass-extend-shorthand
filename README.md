@@ -4,30 +4,90 @@ A [gulp-replace](https://github.com/lazd/gulp-replace) wrapper to add a syntacti
 
 ## Syntax
 
+#### Basic Syntax
+
 ```scss
-%placeholderMixin { background: red; } // %placeholderMixin { background: red; }  
-.mixinA { color: #112358; }            // .mixinA { color: #112358; }             
-.mixinB { display: inline; }           // .mixinB { display: inline; }            
-.mixinC { font-weight: 700; }          // .mixinC { font-weight: 700; }           
-                                       //
-%foo,                                  // %foo,                          
-.bar,                                  // .bar,                          
-figure {                               // figure {                       
-  %placeholderMixin !optional;         //   @extend %placeholderMixin !optional;
-  margin: 0;                           //   margin: 0;                   
-  .mixinA, .mixinB, .mixinC;           //   @extend .mixinA;  
-}                                      //   @extend .mixinB;
-                                       //   @extend .mixinC;
-                                       // }
-                                       //                         
-dl {                                   // dl {                         
-  .mixinA,                             //   @extend .mixinA !optional;
-  .mixinC !optional;                   //   @extend .mixinB !optional;
-  dt {                                 //   dt {                        
-    %placeholderMixin;                 //     @extend %placeholderMixin;        
-  }                                    //   }                            
-}                                      // }                              
+// shorthand
+.myClass {
+  .myMixin;
+}
 ```
+```scss
+// is expanded to
+.myClass {
+  @extend .myMixin;
+}
+```
+
+#### Placeholder Mixins
+
+```scss
+// shorthand
+.myClass {
+  %myPlaceholderMixin;
+}
+```
+```scss
+// is expanded to
+.myClass {
+  @extend %myPlaceholderMixin;
+}
+```
+
+#### Inline List Syntax
+
+```scss
+// shorthand
+.myClass {
+  .mixinA, .mixinB, .mixinC;
+}
+```
+```scss
+// is expanded to
+.myClass {
+  @extend .mixinA;
+  @extend .mixinB;
+  @extend .mixinC;
+}
+```
+
+#### Stacked List Syntax
+
+```scss
+// shorthand
+.myClass {
+  .mixinA,
+  .mixinB,
+  .mixinC;
+}
+```
+```scss
+// is expanded to
+.myClass {
+  @extend .mixinA;
+  @extend .mixinB;
+  @extend .mixinC;
+}
+```
+
+#### Using `!optional`
+
+```scss
+// shorthand
+.myClass {
+  .mixinA, .mixinB !optional;
+  .mixinC;
+}
+```
+```scss
+// is expanded to
+.myClass {
+  @extend .mixinA !optional;
+  @extend .mixinB !optional;
+  @extend .mixinC;
+}
+```
+
 
 ## Usage
 
