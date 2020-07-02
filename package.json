@@ -1,7 +1,7 @@
 {
   "name": "gulp-sass-extend-shorthand",
   "version": "1.0.0",
-  "description": "",
+  "description": "A gulp-replace wrapper to add a shorthand syntax for writing @extend rules in Sass stylesheets.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/sposhe/gulp-sass-extend-shorthand.git"
   },
-  "author": "",
+  "keywords": [
+    "gulpplugin",
+    "gulp",
+    "gulp-replace",
+    "gulp-sass",
+    "sass",
+    "extend",
+    "shorthand"
+  ],
+  "author": "Sean O'Shea",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sposhe/gulp-sass-extend-shorthand/issues"
