@@ -4,7 +4,7 @@ A [gulp-replace](https://github.com/lazd/gulp-replace) wrapper to add a syntacti
 
 ## Using with Utility Class Frameworks
 
-Using semantic class names like `article-list` provide much more human-readable landmarks when examining HTML than adding a string utility classes like `px-px pt-5 pb-4 absolute top-0 left-0` directly to elements in the DOM.
+Using semantic class names like `article-list` provides much more human-readable landmarks when examining HTML than adding a string of utility classes like `px-px pt-5 pb-4 absolute top-0 left-0` directly to elements in the DOM.
 
 Instead, developers can use semantic class names in markup and then use SCSS `@extend` at-rules to apply utility classes to those semantic classes. If the utility class framework is converted from using true class class selected (e.g. `.absolute {...}`) to using [placeholder selectors](https://sass-lang.com/documentation/style-rules/placeholder-selectors) (e.g. `%absolute {...}`), Sass will automatically ignore any unused utility classes when compiling.
 
